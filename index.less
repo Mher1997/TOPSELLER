@@ -7,6 +7,7 @@ body {
 	width: 100%;
 	min-width: 320px !important;
 	scroll-behavior: smooth;
+	// overflow-x: hidden;
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 1.04%, rgba(105, 111, 251, 0.1) 12.5%, rgba(173, 0, 255, 0.1) 29.17%, rgba(65, 159, 217, 0.1) 41.15%, rgba(0, 78, 189, 0.1) 52.6%, rgba(173, 0, 255, 0.1) 64.06%, rgba(105, 111, 251, 0.1) 79.69%, rgba(0, 78, 189, 0.1) 100%), #FFFFFF;
 }
 * {
@@ -266,9 +267,12 @@ input[type="submit"] {
 		}
 	}
 }
+.show-776{
+	display: none !important;
+}
 header {
 	position: fixed;
-	z-index: 9999999999999;
+	z-index: 9999;
 	left: 50%;
 	opacity: 0.97;
 	backdrop-filter: blur(8px);
@@ -466,7 +470,7 @@ header {
 			width: 40%;
 			max-width: 400px;
 			height: 72px;
-			border-left: 5px solid #696FFB;
+			border-left: 5px solid #4CCEAC;
 			display: flex;
 			align-items: center;
 			background-color: white;
@@ -979,14 +983,17 @@ header {
 			justify-content: center;
 			padding: 10px 0 40px;
 			>div{
-				padding: 16px;
+				padding: 13px;
 				border: 1px solid #004EBD;
 				background: #F4F5FF;
-				height: 55px;
+				height: 30px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				cursor: pointer;
+				img{
+					max-width: 62px;
+				}
 				&:hover{
 					background: #e7e7fc;
 				}
@@ -1032,17 +1039,32 @@ header {
 		}
 		.cards {
 			padding-top: 46px;
+			width: 98%;
 			.owl-carousel {
 				.owl-stage-outer {
-					padding: 30px 0;
+					padding: 30px 1%;
+					width: 102% !important;
+					// max-height: 410px;
 				}
 				.owl-stage {
 					padding: 20px 0;
+					display: flex;
+					align-items: center;
 				}
 				.owl-item {
 					box-shadow: 0px 10px 30px rgba(60, 66, 196, 0.1);
-					border-radius: 5px;
-					border-bottom: 5px solid #004EBD;
+					border-radius: 20px;
+					border: 1px solid rgba(105, 111, 251, 0.5);
+					padding: 30px 0 !important;
+					&.center{
+						padding: 40px 0 !important;
+						margin-top: 40px !important;
+						.item {
+							>div {
+								height: 300px;
+							}
+						}
+					}
 					.item {
 						padding: 0;
 						>div {
@@ -1057,15 +1079,16 @@ header {
 							justify-content: space-between;
 							align-items: center;
 							flex-direction: column;
-							height: 400px;
+							height: 280px;
 							>div {
 								display: flex;
-								justify-content: center;
 								align-items: center;
 								flex-direction: column;
+								padding-top: 25px;
 								&:first-child {
 									border-bottom: 2px solid #696FFB;
-									height: 60%;
+									height: 45%;
+									width: 84%;
 									>p {
 										padding-bottom: 20px;
 										color: #343A40;
@@ -1074,7 +1097,7 @@ header {
 									}
 									>h3 {
 										color: #004EBD;
-										font-weight: bold;
+										font-weight: 900;
 										font-size: 40px;
 									}
 								}
@@ -1082,8 +1105,13 @@ header {
 									height: 40%;
 									line-height: 40px;
 									font-weight: bold;
+									justify-content: center;
 									>span {
-										color: #004EBD;
+										color: #AD00FF;
+										font-weight: bold;
+									}
+									>p{
+										color: #343A40;
 									}
 								}
 							}
@@ -1198,10 +1226,17 @@ footer {
 }
 @media only screen and (max-width: 1300px) {
 	.price-list {
-		width: 100%;
+		width: 98%;
+		margin: auto;
 	}
 }
 @media only screen and (max-width: 1190px) {
+	.price-list {
+		.slider{
+			width: 98%;
+			margin: auto;
+		}
+	}
 	.operational-problems {
 		.carousel-problems {
 			.owl-stage-outer {
@@ -1331,6 +1366,14 @@ footer {
 	}
 }
 @media only screen and (max-width: 900px) {
+	.price-list .content {
+		.cards{
+			width: 97%;
+			> div{
+				width: 98%;
+			}
+		}
+	}
 	.switch-options{
 		margin: auto;
 		&.display-mobile{
@@ -1443,6 +1486,7 @@ footer {
 	section {
 		flex-direction: column;
 		margin: 0 4%;
+		background-image: none !important;
 		h2 {
 			text-align: center;
 		}
@@ -1468,12 +1512,16 @@ footer {
 			}
 		}
 		.slider {
-			.center {
-				padding: 0 !important;
-			}
-			.owl-item {
-				margin-top: 0 !important;
-				padding: 0 !important;
+			.content .cards{
+				.owl-carousel{ 
+					.owl-item {
+						margin-top: 0 !important;
+						padding: 0 !important;
+						.center {
+							padding: 0 !important;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1534,12 +1582,18 @@ footer {
 			.left-bar-bottom {
 				padding-top: 50px;
 				width: 100%;
+				background-color: unset;
 				.form-bar {
 					form {
 						padding-bottom: 20px;
 						.input-group {
 							input {
 								width: 90%;
+								border-radius: 5px !important;
+								height: 70px !important;
+								&[type="submit"]{
+									border-radius: 20px !important;
+								}
 							}
 							.form-checkbox {
 								margin-top: 10px;
@@ -1552,6 +1606,7 @@ footer {
 					width: 96%;
 					margin: auto;
 					flex-wrap: wrap;
+					background-color: unset;
 					img {
 						margin-right: 10px;
 					}
@@ -1617,6 +1672,20 @@ footer {
 					top: 430px;
 				}
 			}
+		}
+	}
+	.operational-problems{
+		padding-top: 100px;
+		.title{
+			padding-bottom: 60px;
+			h2{
+				width: 100% !important;
+			}
+		}
+	}
+	.switch-options{
+		>span{
+			font-size: 16px !important;
 		}
 	}
 	.smart-sticker {
@@ -1778,6 +1847,9 @@ footer {
 	}
 	.hide-776{
 		display: none !important;
+	}
+	.show-776{
+		display: block !important;
 	}
 	.operational-problems .carousel-problems .owl-stage-outer .owl-item .item .content .problem-item{
 		flex-direction: column;

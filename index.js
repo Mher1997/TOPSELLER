@@ -122,10 +122,30 @@ $(document).ready(function(){
     })
     $('.marketplaces').children().click(function(e){
         const target = $(e.target);
+        const alt = target.closest('div').find('img').attr('alt');
+        const options = $('.price-option');
+        
         $('.marketplaces').children().removeClass("active");
         target.closest('div').addClass('active');
+        
+
+        for(let i=0; i<options.length; i++){
+            if(options[i].className.indexOf(1)!==-1){
+                $(options[i]).find('h3').html(`${prices[alt][1]} руб`);
+            }else if(options[i].className.indexOf(2)!==-1){
+                $(options[i]).find('h3').html(`${prices[alt][2]} руб`);
+            }else{
+                $(options[i]).find('h3').html(`${prices[alt][0]} руб`);
+            }
+        }
     })
 })
+
+const prices = {
+    ozon: [4990, 11990, 22500],
+    wb: [2990, 7090, 20000],
+    beru: [9190, 15090, 25600],
+}
 
 $(document).ready(function(){
 	$('form').on('submit', function(e) {

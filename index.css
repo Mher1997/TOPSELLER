@@ -264,9 +264,12 @@ input[type="submit"] {
 .slider .owl-nav button:hover {
   background-color: unset !important;
 }
+.show-776 {
+  display: none !important;
+}
 header {
   position: fixed;
-  z-index: 9999999999999;
+  z-index: 9999;
   left: 50%;
   opacity: 0.97;
   backdrop-filter: blur(8px);
@@ -454,7 +457,7 @@ header .content .header-element h4 {
   width: 40%;
   max-width: 400px;
   height: 72px;
-  border-left: 5px solid #696FFB;
+  border-left: 5px solid #4CCEAC;
   display: flex;
   align-items: center;
   background-color: white;
@@ -945,14 +948,17 @@ header .content .header-element h4 {
   padding: 10px 0 40px;
 }
 .price-list .title .marketplaces > div {
-  padding: 16px;
+  padding: 13px;
   border: 1px solid #004EBD;
   background: #F4F5FF;
-  height: 55px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.price-list .title .marketplaces > div img {
+  max-width: 62px;
 }
 .price-list .title .marketplaces > div:hover {
   background: #e7e7fc;
@@ -995,17 +1001,29 @@ header .content .header-element h4 {
 }
 .price-list .content .cards {
   padding-top: 46px;
+  width: 98%;
 }
 .price-list .content .cards .owl-carousel .owl-stage-outer {
-  padding: 30px 0;
+  padding: 30px 1%;
+  width: 102% !important;
 }
 .price-list .content .cards .owl-carousel .owl-stage {
   padding: 20px 0;
+  display: flex;
+  align-items: center;
 }
 .price-list .content .cards .owl-carousel .owl-item {
   box-shadow: 0px 10px 30px rgba(60, 66, 196, 0.1);
-  border-radius: 5px;
-  border-bottom: 5px solid #004EBD;
+  border-radius: 20px;
+  border: 1px solid rgba(105, 111, 251, 0.5);
+  padding: 30px 0 !important;
+}
+.price-list .content .cards .owl-carousel .owl-item.center {
+  padding: 40px 0 !important;
+  margin-top: 40px !important;
+}
+.price-list .content .cards .owl-carousel .owl-item.center .item > div {
+  height: 300px;
 }
 .price-list .content .cards .owl-carousel .owl-item .item {
   padding: 0;
@@ -1018,7 +1036,7 @@ header .content .header-element h4 {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 400px;
+  height: 280px;
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div:nth-child(2) {
   height: 484px;
@@ -1026,13 +1044,14 @@ header .content .header-element h4 {
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 25px;
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div:first-child {
   border-bottom: 2px solid #696FFB;
-  height: 60%;
+  height: 45%;
+  width: 84%;
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div:first-child > p {
   padding-bottom: 20px;
@@ -1042,16 +1061,21 @@ header .content .header-element h4 {
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div:first-child > h3 {
   color: #004EBD;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 40px;
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div:last-child {
   height: 40%;
   line-height: 40px;
   font-weight: bold;
+  justify-content: center;
 }
 .price-list .content .cards .owl-carousel .owl-item .item > div > div:last-child > span {
-  color: #004EBD;
+  color: #AD00FF;
+  font-weight: bold;
+}
+.price-list .content .cards .owl-carousel .owl-item .item > div > div:last-child > p {
+  color: #343A40;
 }
 .instructions {
   padding-top: 150px;
@@ -1158,10 +1182,15 @@ footer > div * {
 }
 @media only screen and (max-width: 1300px) {
   .price-list {
-    width: 100%;
+    width: 98%;
+    margin: auto;
   }
 }
 @media only screen and (max-width: 1190px) {
+  .price-list .slider {
+    width: 98%;
+    margin: auto;
+  }
   .operational-problems .carousel-problems .owl-stage-outer .owl-item .item .content {
     padding: 20px 0;
   }
@@ -1247,6 +1276,12 @@ footer > div * {
   }
 }
 @media only screen and (max-width: 900px) {
+  .price-list .content .cards {
+    width: 97%;
+  }
+  .price-list .content .cards > div {
+    width: 98%;
+  }
   .switch-options {
     margin: auto;
   }
@@ -1354,6 +1389,7 @@ footer > div * {
   section {
     flex-direction: column;
     margin: 0 4%;
+    background-image: none !important;
   }
   section h2 {
     text-align: center;
@@ -1371,11 +1407,11 @@ footer > div * {
   .price-list .content .cards .owl-carousel .owl-item .item > div {
     height: 300px;
   }
-  .price-list .slider .center {
+  .price-list .slider .content .cards .owl-carousel .owl-item {
+    margin-top: 0 !important;
     padding: 0 !important;
   }
-  .price-list .slider .owl-item {
-    margin-top: 0 !important;
+  .price-list .slider .content .cards .owl-carousel .owl-item .center {
     padding: 0 !important;
   }
   .display-mobile {
@@ -1436,12 +1472,18 @@ footer > div * {
   .header-content .left-bar .left-bar-bottom {
     padding-top: 50px;
     width: 100%;
+    background-color: unset;
   }
   .header-content .left-bar .left-bar-bottom .form-bar form {
     padding-bottom: 20px;
   }
   .header-content .left-bar .left-bar-bottom .form-bar form .input-group input {
     width: 90%;
+    border-radius: 5px !important;
+    height: 70px !important;
+  }
+  .header-content .left-bar .left-bar-bottom .form-bar form .input-group input[type="submit"] {
+    border-radius: 20px !important;
   }
   .header-content .left-bar .left-bar-bottom .form-bar form .input-group .form-checkbox {
     margin-top: 10px;
@@ -1451,6 +1493,7 @@ footer > div * {
     width: 96%;
     margin: auto;
     flex-wrap: wrap;
+    background-color: unset;
   }
   .header-content .left-bar .left-bar-bottom .telegram-bar img {
     margin-right: 10px;
@@ -1508,6 +1551,18 @@ footer > div * {
   }
   .header-content .right-bar .card:nth-child(6) {
     top: 430px;
+  }
+  .operational-problems {
+    padding-top: 100px;
+  }
+  .operational-problems .title {
+    padding-bottom: 60px;
+  }
+  .operational-problems .title h2 {
+    width: 100% !important;
+  }
+  .switch-options > span {
+    font-size: 16px !important;
   }
   .smart-sticker .left-bar {
     width: 100%;
@@ -1648,6 +1703,9 @@ footer > div * {
   }
   .hide-776 {
     display: none !important;
+  }
+  .show-776 {
+    display: block !important;
   }
   .operational-problems .carousel-problems .owl-stage-outer .owl-item .item .content .problem-item {
     flex-direction: column;
